@@ -4,21 +4,32 @@ int main()
 {
     int bingo[5][5] = {0};
     int a;
-    int arr[a];
+    int num;
+    int r, c;
 
     scanf("%d", &a);
-    for (int i = 0; i < a; i++)
-        scanf("%d", &arr[i]);
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < a; i++)
     {
+        scanf("%d", &num);
+        r = (num - 1) / 5;
+        c = (num - 1) % 5;
         for (int j = 0; j < 5; j++)
         {
-            int r = arr[i] / 5;
-            int c = arr[i] % 5;
-            bingo[r][c] = 1;
+            if (bingo[r][c] != 1)
+                bingo[r][c] = 1;
         }
     }
+
+    // for (int i = 0; i < 5; i++)
+    // {
+    //     for (int j = 0; j < 5; j++)
+    //     {
+    //         r = (arr[i]-1) / 5;
+    //         c = (arr[i]-1) % 5;
+    //         bingo[r][c] = 1;
+    //     }
+    // }
 
     printf("---------------------\n");
     for (int i = 0; i < 5; i++)

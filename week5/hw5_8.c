@@ -15,21 +15,30 @@ int main()
             break;
         else
         {
-            count++;
             printf("Enter the %dth number: ", count + 1);
             scanf("%d", &temp);
+            check = 1;
+
             for (i = 0; i < count; i++)
-                if (number[i] != temp)
+
+                if (number[i] == temp)
                 {
-                    number[count] = temp;
-                    check = 1;
+                    check = 0;
+                    break;
                 }
-                else
-                    printf("Invalid input. Please enter again.\n");
+
+            if (check == 1)
+            {
+                number[count] = temp;
+                count++;
+            }
+            else
+                printf("Invalid input. Please enter again.\n");
         }
     }
+
     for (i = 0; i < 10; i++)
-        printf("The %dth number is %d.", i + 1, number[i]);
+        printf("The %dth number is %d.\n", i + 1, number[i]);
 
     return 0;
 }
