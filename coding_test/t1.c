@@ -6,11 +6,13 @@
 // 나 박지원은 하나님과 사람 앞에서 정직하고 성실하게 코딩 테스트를 수행하겠습니다.
 
 // 이곳에 생각을 적을 것! Your thoughts here!
-// 1. count와 초기값을 입력받는다
-// 2. count만큼 값을 받아서 초기값보다 큰지 작은지 판별한다 (크면 count_plus++ 작으면 count_minus++)
-// 3. 받은 price를 sum에 추가한다
-// 4. for문을 빠져나와서 sum/count를 한다
-// 5. 결과를 출력한다
+// 1. count(몇번 반복할 것인가)와 기준이 되는 초기값을 입력받는다
+// 2. count만큼 반복한다
+// - 값을 입력받아서 기준 값보다 큰지 작은지를 판별한다
+// - 크면 count_plus++ 작으면 count_minus++를 한다
+// - 입력받은 값을 sum에 추가한다
+// 3. sum/count를 한다
+// 4. 결과를 출력한다
 
 int main()
 {
@@ -26,9 +28,7 @@ int main()
     {
         scanf("%f", &price);
         if (start <= price)
-        {
             count_plus++;
-        }
         else
             count_minus++;
 
