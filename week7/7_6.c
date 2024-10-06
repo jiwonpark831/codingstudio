@@ -41,6 +41,20 @@ int main()
             }
         }
 
-    printf("The largest number is %d to the power of %d, which is %d.\nThe smallest number is %d to the power of %d, which is %d.", max_a, max_b, max, min_a, min_b, min);
+    printf("The largest number is %d to the power of %d, which is ", max_a, max_b);
+    if (max > 1000000)
+        printf("%d,%d,%d.", max / 1000000, (max % 1000000) / 1000, max % 1000);
+    else if (max > 1000)
+        printf("%d,%d.", (max % 1000000) / 1000, max % 1000);
+    else
+        printf("%d.", max);
+
+    printf("\nThe smallest number is %d to the power of %d, which is ", min_a, min_b);
+    if (min > 1000000)
+        printf("%d,%d,%d.", min / 1000000, (min % 1000000) / 1000, min % 1000);
+    else if (min > 1000)
+        printf("%d,%d.", (min % 1000000) / 1000, min % 1000);
+    else
+        printf("%d.", min);
     return 0;
 }
