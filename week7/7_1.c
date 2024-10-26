@@ -9,7 +9,7 @@ int main(void)
     int count = 1;  // 사용자가 맞추려고 시도한 횟수
 
     srand(time(0));
-    answer = rand() % 100;
+    answer = rand() % 100 + 1;
 
     printf("만들어진수: %d\n", answer);
 

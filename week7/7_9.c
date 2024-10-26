@@ -17,7 +17,7 @@ int main(void)
     for (int i = 0; i < 5; i++)
         for (int j = 0; j < 3; j++)
         {
-            jumsu[i][j] = rand() % 50 + 50;
+            jumsu[i][j] = rand() % 51 + 50;
             sum_student[i] += jumsu[i][j];
             sum_class[j] += jumsu[i][j];
         }
