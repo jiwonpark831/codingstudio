@@ -12,13 +12,14 @@ int main()
     menu = which_first(&string1, &string2);
     if (menu == 1)
         printf("The first string comes first in the dictionary.");
-    else
+    else if (menu == 2)
         printf("The second string comes first in the dictionary.");
 
     return 0;
 }
 int which_first(char *str1, char *str2)
 {
+
     int i = 0;
     while (i = 12)
     {

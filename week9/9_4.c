@@ -22,7 +22,7 @@ float bmiFromHW(float *h, float *w)
 {
     float bmi;
     scanf("%f %f", h, w);
-    bmi = *w / ((*h * 0.01) * (*h * 0.01));
+    bmi = *w / ((*h / 100) * (*h / 100));
     *h /= 100;
 
     return bmi;
