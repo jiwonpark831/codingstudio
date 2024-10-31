@@ -28,7 +28,7 @@ int main(void)
             printBingo(bingo);
             break;
         }
-        s = markbingo(num, bingo);
+        s = markbingo(num - 1, bingo);
         if (s == -1)
         {
             continue;
@@ -47,24 +47,41 @@ int main(void)
 
 int markbingo(int num, int b[25])
 {
-    int rbingo = 1;
-    int cbingo = 1;
+    int r = num / 5;
+    int c = num % 5;
 
     if (b[num] != 1)
     {
         b[num] = 1;
 
+        int rbingo = 1;
+        int cbingo = 1;
+        int d1 = 1;
+        int d2 = 1;
+
         for (int i = 0; i < 5; i++)
 
-            if (b[i] == 0)
+            if (b[r * 5 + i] == 0)
                 rbingo = 0;
 
         for (int i = 0; i < 5; i++)
 
-            if (b[i] == 0)
+            if (b[i * 5 + c] == 0)
                 cbingo = 0;
 
-        if (rbingo == 1 || cbingo == 1)
+        for (int i = 0; i < 5; i++)
+        {
+            if (b[i * 5 + i] == 0)
+                d1 = 0;
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            if (b[i * 5 + (4 - i)] == 0)
+                d2 = 0;
+        }
+
+        if (rbingo == 1 || cbingo == 1 || d1 == 1 || d2 == 1)
             return 1;
         else
             return -1;
@@ -82,9 +99,9 @@ void printBingo(int b[25])
         for (int j = 0; j < 5; j++)
         {
             if (j == 4)
-                printf(" %d |\n", b[i]);
+                printf(" %d |\n", b[i * 5 + j]);
             else
-                printf(" %d |", b[i]);
+                printf(" %d |", b[i * 5 + j]);
         }
         printf("---------------------\n");
     }
