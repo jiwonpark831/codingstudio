@@ -1,0 +1,5 @@
+1 Samgyeopsal Korean 9000
+2 Rib American 15000
+3 Sirloin Australian 30000
+4 Tenderloin Australian 12000
+5 Chadolbagi Korean 13000
