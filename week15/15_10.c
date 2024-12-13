@@ -315,34 +315,42 @@ void findRoom(struct st_card *p[], int n)
 // 15-10
 int addCards(struct st_card *p[], int n)
 {
+
     int add;
     int menu, capa;
-
-    while (1)
+    int m = 0;
+    while (!m)
     {
         printf("추가할 객실번호는? >> ");
         scanf("%d", &add);
 
-        int duplicate = 0;
         for (int i = 0; i < n; i++)
-
+        {
             if (p[i]->no == add)
             {
-                duplicate = 1;
+                printf("이미 등록된 객실번호입니다.\n");
+                m = 0;
                 break;
             }
+            m = 1;
+        }
 
-        if (duplicate == 1)
+        if (m)
         {
-            printf("이미 등록된 객실번호입니다.\n");
-            continue;
+            int next = 0;
+            for (int i = 0; i < n; i++)
+                if (p[i]->no == add - 1 || p[i]->no == add + 1)
+                {
+                    next = 1;
+                    break;
+                }
+
+            if (!next)
+            {
+                printf("연속적인 객실번호가 아닙니다.\n");
+                m = 0;
+            }
         }
-        if (n > 0 && (add != p[n - 1]->no + 1))
-        {
-            printf("연속적인 객실번호가 아닙니다.\n");
-            continue;
-        }
-        break;
     }
 
     printf("객실등급(Deluxe 1, Luxury 2, Suite 3)과 최대인원을 입력하세요 >> ");
